@@ -1,59 +1,75 @@
+"------------------------------
+" PLUGIN MANAGER: vim-plug
+"------------------------------
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
+
+call plug#end()
+
+"------------------------------
+" BASIC SETTINGS
+"------------------------------
 filetype plugin indent on
 syntax on
 
-set directory=~/.vim/swapfiles/
-
-" Numbers
-set number	             " Display line numbers beside buffer
+set number
 set numberwidth=5
+set scrolloff=4
 
-set scrolloff=4          " Keep at least 4 lines below cursor
-
-" Softtabs, 4 spaces
 set tabstop=4
 set shiftwidth=4
-set shiftround
 set expandtab
+set shiftround
 
-" Make it obvious where 99 characters is
-highlight ColorColumn ctermbg=DarkGray
 set textwidth=119
 set colorcolumn=+1
+highlight ColorColumn ctermbg=DarkGray
 
-" Highlights the areas that you search for
 set hlsearch
-
-" Searches incremetally as you type.
 set incsearch
+set mouse=a
 
-" Map keys to open and close NerdTree
-map <C-n> :NERDTreeToggle<CR>
-
-" Shows trailing whitespace and spaces before a tab
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s\+$\| \+\ze\\t/
+match ExtraWhitespace /\s\+$\| \+\ze\t/
 
-" Moving in buffer next previous and closing one
-nmap <Right> :bnext<CR>
-nmap <Left> :bprevious<CR>
-nmap <C-e> :bp<BAR>bd#<CR>
+"------------------------------
+" KEY MAPPINGS
+"------------------------------
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <Right> :bnext<CR>
+nnoremap <Left>  :bprevious<CR>
+nnoremap <C-e>   :bp<BAR>bd#<CR>
 
-" Don't be a noob, join the no arrows key movement
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+noremap  <Up>    <NOP>
+noremap  <Down>  <NOP>
 
-" Enable the list of buffers
+"------------------------------
+" AIRLINE SETTINGS
+"------------------------------
 let g:airline#extensions#tabline#enabled = 1
-
-" Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_theme = 'base16'
 
-" Set a vim-airline-theme
-let g:airline_theme='base16'
+"------------------------------
+" FZF SETTINGS
+"------------------------------
+nnoremap <C-p> :Files<CR>
 
-" " Make CtrlP use ag for listing the files. Way faster and no useless files.
-" let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
-" let g:ctrlp_use_caching = 0
+"------------------------------
+" UNDO HISTORY
+"------------------------------
+set undofile
+set undodir=~/.vim/undodir
 

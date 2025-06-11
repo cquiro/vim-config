@@ -1,0 +1,23 @@
+# Ignore plugin installations (managed by vim-plug)
+plugged/
+
+# Ignore undo and swap files
+undo/
+swap/
+backup/
+
+# Ignore temp files
+*.swp
+*.swo
+*.tmp
+*~
+
+# Ignore legacy plugin structure
+pack/
+
+# Ignore fzf cache
+.fzf*
+
+# Ignore Vim sessions (if you use them)
+Session.vim
+

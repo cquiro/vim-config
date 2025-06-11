@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/carlosquiroga/dotfiles/vim'
+let g:netrw_dirhist_7='/Users/carlosquiroga/dotfiles/vim/.vim'
+let g:netrw_dirhist_6='/Users/carlosquiroga/dotfiles/vim/.vim/pack'
+let g:netrw_dirhist_5='/Users/carlosquiroga/dotfiles/vim/.vim/pack/tpope'
+let g:netrw_dirhist_4='/Users/carlosquiroga/dotfiles/vim/.vim/pack/tpope/start'
+let g:netrw_dirhist_3='/Users/carlosquiroga/dotfiles/vim/.vim/pack/tpope'
+let g:netrw_dirhist_2='/Users/carlosquiroga/dotfiles/vim/.vim/pack'
+let g:netrw_dirhist_1='/Users/carlosquiroga/dotfiles/vim/.vim'
