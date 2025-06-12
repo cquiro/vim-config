@@ -1,6 +1,6 @@
 # 📝 Dotfiles: Vim & IdeaVim Setup
 
-This repo contains personalized configuration files for:
+This repo contains your personalized configuration files for:
 
 - **Vim**
 - **IntelliJ's IdeaVim plugin**
@@ -13,24 +13,26 @@ It supports a clean, symlink-based setup for portability across machines.
 
 ```
 dotfiles/
-├── vim/
-│   ├── .vimrc          # Vim configuration file
-│   ├── .ideavimrc      # IdeaVim configuration file
-│   ├── .vim/           # Vim plugins, autoloads, etc.
-│   └── setup.sh        # Setup script to create symlinks
+└── vim/                  # Git repo root
+    ├── .vimrc            # Vim configuration file
+    ├── .ideavimrc        # IdeaVim configuration file
+    ├── .vim/             # Vim plugins, autoloads, etc.
+    └── setup.sh          # Setup script to create symlinks
 ```
+
+> 💡 Note: The Git repository is initialized inside the `dotfiles/vim/` folder.
 
 ---
 
 ## ⚙️ What `setup.sh` Does
 
-The script creates symbolic links from your home directory to the version-controlled config files in this repo:
+The script creates symbolic links from your home directory to the version-controlled config files in this `vim/` subfolder:
 
-| Target in `$HOME`        | Symlink Source                            |
-|--------------------------|-------------------------------------------|
-| `~/.vimrc`               | `dotfiles/vim/.vimrc`                     |
-| `~/.vim`                 | `dotfiles/vim/.vim`                       |
-| `~/.ideavimrc`           | `dotfiles/vim/.ideavimrc`                 |
+| Target in `$HOME`        | Symlink Source              |
+|--------------------------|-----------------------------|
+| `~/.vimrc`               | `dotfiles/vim/.vimrc`       |
+| `~/.vim`                 | `dotfiles/vim/.vim`         |
+| `~/.ideavimrc`           | `dotfiles/vim/.ideavimrc`   |
 
 If any of these files already exist, the script will:
 
@@ -43,10 +45,16 @@ If any of these files already exist, the script will:
 ### 1. Clone your dotfiles repository
 
 ```bash
-git clone git@github.com:yourusername/dotfiles.git ~/dotfiles
+git clone git@github.com:yourusername/dotfiles.git ~/dotfiles/vim
 ```
 
-### 2. Run the setup script
+Or using HTTPS:
+
+```bash
+git clone https://github.com/yourusername/dotfiles.git ~/dotfiles/vim
+```
+
+### 2. Run the setup script from inside the `vim/` subfolder
 
 ```bash
 cd ~/dotfiles/vim
