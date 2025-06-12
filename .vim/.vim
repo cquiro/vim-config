@@ -1,1 +1,0 @@
-/Users/carlosquiroga/dotfiles/vim/.vim
